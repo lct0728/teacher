@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -16,5 +17,6 @@ public class Student {
     private String name;
     @ManyToOne
     private Teacher teacher;
-    private Map<Course,Integer> grades;//成绩不会写
+    @OneToMany(mappedBy = "student")
+    private List<Grade> grades;
 }
