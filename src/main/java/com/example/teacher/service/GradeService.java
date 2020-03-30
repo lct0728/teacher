@@ -21,16 +21,16 @@ public class GradeService {
         gradeRepository.save(grade);
     }
 
-    public List<Grade> getGrade(Student student){//想过直接传id，但这样查找的话，方法不能overload
-        List<Grade> list=gradeRepository.listByStudent(student.getId());
+    public List<Grade> getGradeByStudentId(int id){//想过直接传id，但这样查找的话，方法不能overload
+        List<Grade> list=gradeRepository.listByStudent(id);
         return list;
     }
-    public List<Grade> getGrade(Course course){
-        List<Grade> list=gradeRepository.listByCourse(course.getId());
+    public List<Grade> getGradeByCourseId(int id){
+        List<Grade> list=gradeRepository.listByCourse(id);
         return list;
     }
-    public Grade getGrade(Student student,Course course){
-        Grade grade=gradeRepository.getOne(student.getId(), course.getId());
+    public Grade getGradeByStudentCourse(int studentid,int courseid){
+        Grade grade=gradeRepository.getOne(studentid, courseid);
         return grade;
     }
 

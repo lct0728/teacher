@@ -17,4 +17,5 @@ public class Teacher {
     private int number;//可选人数
     @OneToMany(mappedBy = "teacher")
     private List<Student> students;//已选择的学生
+    private String password;
 }
